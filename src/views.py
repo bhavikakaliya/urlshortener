@@ -13,6 +13,10 @@ collection = db["shorturls"]
 
 router = APIRouter()
 
+@router.get("/")
+async def root():
+    return {"Hello" : "World"}
+
 @router.get("/{short_url}")
 async def redirect(short_url: str):
 
